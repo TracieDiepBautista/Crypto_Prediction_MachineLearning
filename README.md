@@ -12,7 +12,9 @@
   ![blog_image_21-1](https://user-images.githubusercontent.com/93897775/167540512-1482f689-521d-45df-bc1c-b1fd0bd4549e.png)
 
 
-    Raw data to handle, so, the step-by-step of this project were: 
+```diff
++ Raw data to handle, so, the step-by-step of this project were:
+```
     
     - Prep-processing data source to fit the machine learning models. Since there is no known classification system, 
       the unsupervised learning need to be used. 
@@ -34,7 +36,9 @@
 
     - Standardize the dataset so that columns that contain larger values do not unduly influence the outcome.
 
-      ### Dimensionality Reduction
+```diff
++ Dimensionality Reduction
+```
 
       Creating dummy variables above dramatically increased the number of features in the dataset: 
       
@@ -48,7 +52,9 @@
        the output of the PCA transformation. Then created a scatter plot of the t-SNE output.
        
 
-    ### Cluster Analysis with k-Means
+```diff
++ Cluster Analysis with k-Means
+```
 
         - Create an elbow plot to identify the best number of clusters. Use a for-loop to determine the inertia for 
         each `k` between 1 through 10. (Determine, if possible, where the elbow of the plot is, and at which value of `k` it appears.)
@@ -57,16 +63,27 @@
 - Tools and Resources used:
 ``` 
 
-    - The dataset was obtained from [CryptoCompare](https://min-api.cryptocompare.com/data/all/coinlist).
     - VSCode 
     - Python language | Matplotlib | Pandas 
-    - skilearn 
+    - pathlib
+    - sklearn.preprocessing | sklearn.decomposition | sklearn.cluster (StandardScaler, PCA, K_Means)
+    - The dataset was obtained from [CryptoCompare](https://min-api.cryptocompare.com/data/all/coinlist).
     
 ```diff
 - Findings:
 ```
 
-    ...tobe continued.. 
+    Per the requirements, when applied PCA, 90% of the explained variance in dimensionality reduction 
+    should be preserved, that meant, we should allow at least 90% of the data set to be useful. 
+    
+    - The above would get the most reliable results in which group (portfolio) of crypto mining is the best 
+      to be invested. Unfortunately, the model turned out no portfolio is good in the data set for our investors
+      at this moment. 
+    
+    - If we tried to adjust the PCA number of components to be lower before t-SNE on the principal components 
+      that allow more trash data, let say, up to 50%, we would have 2 clusters to be considered as portfolio options. 
+      However, I did not recommend this trial because the level of accuracy would be very low that might let our investors 
+      take high risk. 
 
 
 ```diff
