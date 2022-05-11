@@ -92,4 +92,7 @@
 
     Tracie Bautista Nguyen
     Data Analyst 
+    E: tracynguyen.bautista@gmail.com
+    LinkedIn: https://www.linkedin.com/in/tracynguyen10/
+    
     
